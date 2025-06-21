@@ -59,4 +59,13 @@ banqapp/
 - Import into Eclipse or any Java IDE  
 - Set up the MySQL database using the provided SQL scripts  
 - Run the application from the `app` package
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Developer
+
+This application was developed by **Bilal Essafrioui**.
+
    
