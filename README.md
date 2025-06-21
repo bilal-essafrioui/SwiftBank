@@ -28,6 +28,7 @@ A Java Swing desktop application simulating a real-world banking system, built w
 
 This application follows the **MVC design pattern** and uses the **DAO pattern** for database interactions.
 
+```
 banqapp/
 └── src/
 ├── app # Application entry point
@@ -39,6 +40,7 @@ banqapp/
 ├── service # Business logic
 ├── util # Utility classes
 └── view # Swing UI components
+```
 
 ## Technologies
 
