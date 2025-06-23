@@ -16,12 +16,12 @@ public class DashboardView extends JFrame {
     private JButton addBeneficiaryBtn;
     private JButton depositBtn;
     private JButton transferBtn;
+    private JButton withdrawBtn;
     private JButton transactionHistoryBtn;
     private JButton createSavingsAccountBtn;
     private JButton switchToCheckingAccountBtn;
     private JButton transferToCheckingAccountBtn;
     private JButton logoutBtn;
-    private JButton withdrawBtn;
 
     public DashboardView(Client client, Account account, String accountType) {
         this.client = client;
@@ -62,10 +62,10 @@ public class DashboardView extends JFrame {
         switchToCheckingAccountBtn = new JButton("Switch to Checking Account");
         transferToCheckingAccountBtn = new JButton("Transfer to Checking Account");
 
-        // Style commun des boutons
+        
         Font btnFont = new Font("Segoe UI", Font.PLAIN, 14);
-        Color btnBgColor = new Color(73, 80, 87); // gris anthracite
-        Color btnHoverBg = new Color(108, 117, 125); // gris moyen pour hover
+        Color btnBgColor = new Color(73, 80, 87); 
+        Color btnHoverBg = new Color(108, 117, 125); 
         Color btnFgColor = Color.WHITE;
 
         JButton[] buttons = {
@@ -82,11 +82,11 @@ public class DashboardView extends JFrame {
             btn.setBorder(BorderFactory.createEmptyBorder(8, 15, 8, 15));
             btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
             btn.setPreferredSize(new Dimension(220, 38));
-            btn.setMaximumSize(new Dimension(220, 38)); // Ajouté pour BoxLayout
-            btn.setMinimumSize(new Dimension(220, 38));  // Ajouté pour BoxLayout
+            btn.setMaximumSize(new Dimension(220, 38)); 
+            btn.setMinimumSize(new Dimension(220, 38));  
             btn.setOpaque(true);
             btn.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(60, 65, 70)), // bord sombre doux
+                BorderFactory.createLineBorder(new Color(60, 65, 70)), 
                 BorderFactory.createEmptyBorder(5, 15, 5, 15)
             ));
 
@@ -101,7 +101,7 @@ public class DashboardView extends JFrame {
             });
         }
 
-        // Ajouter les boutons avec espacement uniforme
+        
         boolean firstButton = true;
         JButton[] orderedButtons = {
             addBeneficiaryBtn, depositBtn, withdrawBtn, transferBtn,
@@ -119,11 +119,11 @@ public class DashboardView extends JFrame {
             }
         }
         
-        sidebarPanel.add(Box.createVerticalGlue()); // Pousse tout vers le haut
+        sidebarPanel.add(Box.createVerticalGlue()); 
 
-        add(sidebarPanel, BorderLayout.WEST); // place sidebar à gauche (pleine hauteur)
+        add(sidebarPanel, BorderLayout.WEST); 
 
-        // ---------- TOP PANEL (Bonjour Mr..., Date, Logout) ----------
+        
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
@@ -216,7 +216,7 @@ public class DashboardView extends JFrame {
 
     public JButton getAddBeneficiaryBtn() { return addBeneficiaryBtn; }
     public JButton getDepositBtn() { return depositBtn; }
-    public JButton getWithdrawBtn() { return withdrawBtn; } // Ajout du getter pour withdrawBtn
+    public JButton getWithdrawBtn() { return withdrawBtn; }
     public JButton getTransferBtn() { return transferBtn; }
     public JButton getTransactionHistoryBtn() { return transactionHistoryBtn; }
     public JButton getCreateSavingsAccountBtn() { return createSavingsAccountBtn; }

@@ -63,7 +63,7 @@ public class TransactionController {
         	String amountStr = depositView.getAmount();
         	String description = depositView.getDescription();
             transactionService.deposit(account.getIdAccount(), amountStr, description);
-            depositView.showMessage("Deposit successful: " + amountStr, "Success", JOptionPane.INFORMATION_MESSAGE);
+            depositView.showMessage("The deposit of " + amountStr + " MAD has been completed successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
             
             depositView.dispose();
             
@@ -76,8 +76,10 @@ public class TransactionController {
             
         } catch (IllegalArgumentException e) {
         	depositView.showMessage(e.getMessage(), "Validation Error", JOptionPane.WARNING_MESSAGE);
+        	depositView.dispose();
         } catch (RuntimeException | SQLException e) {
         	depositView.showMessage("Deposit failed: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        	depositView.dispose();
         }
     }
 
@@ -102,13 +104,14 @@ public class TransactionController {
             );
 
             JOptionPane.showMessageDialog(transferView, "Transfer submitted successfully!");
+            
             transferView.dispose();
             
             // getting the account with new balance
             AccountService accountService = new AccountService();
             Account checkingAccount = accountService.getCheckingAccountByClientId(client.getId());
             
-            // 
+            //
             new DashboardController(client, checkingAccount, "CHECKING");
 
         } catch (IllegalArgumentException ex) {

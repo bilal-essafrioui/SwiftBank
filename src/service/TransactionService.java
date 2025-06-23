@@ -67,7 +67,6 @@ public class TransactionService {
 
         try {
             transactionDAO.performDeposit(accountId, amount, description);
-            throw new IllegalArgumentException("Deposit successful: " + amount);
         } catch (SQLException e) {
             throw new RuntimeException("Deposit failed: " + e.getMessage(), e);
         }

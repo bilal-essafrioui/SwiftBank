@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
 public class BeneficiaryController {
     private AddBeneficiaryView addBeneficiaryView;
     private BeneficiaryService beneficiaryService;
-    private Client client;           
+    /*private Client client;  */      
     private Account account;
 
     public BeneficiaryController(Client client, Account account) throws SQLException {
         this.addBeneficiaryView = new AddBeneficiaryView();
         this.beneficiaryService = new BeneficiaryService();
-        this.client = client;
+        /*this.client = client;*/
         this.account = account;
         
         addBeneficiaryView.getSubmitButton().addActionListener(e -> addBeneficiary());

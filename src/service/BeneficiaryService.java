@@ -30,7 +30,11 @@ public class BeneficiaryService {
             throw new IllegalArgumentException("An account cannot be its own beneficiary.");
         }
         
-        return beneficiaryDAO.save(accountId, beneficiaryId);
+        try {
+            return beneficiaryDAO.save(accountId, beneficiaryId);
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("The specified beneficiary is already associated with your account.");
+        }
     }
     
     public List<String[]> loadBeneficiaries(int accountId) throws SQLException {

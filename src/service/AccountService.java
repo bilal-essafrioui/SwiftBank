@@ -30,7 +30,7 @@ public class AccountService {
         
         return accountDAO.save(accountNumber, rib, balance, "CHECKING", clientId);
     }
-    
+      
     public Account getCheckingAccountByClientId(int clientId) throws SQLException {
         return accountDAO.getCheckingAccountByClientId(clientId);
     }

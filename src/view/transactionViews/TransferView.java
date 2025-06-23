@@ -86,11 +86,10 @@ public class TransferView extends JFrame {
                 label.setOpaque(true);
 
                 if (index == -1) {
-                    // Affichage sélectionné (combo fermé) : fond blanc, texte noir
                     label.setBackground(background);
                     label.setForeground(foreground);
                 } else {
-                    // Liste déroulante : bleu sélection, texte blanc, sinon blanc texte noir
+                    
                     label.setBackground(isSelected ? selectionBackground : background);
                     label.setForeground(isSelected ? selectionForeground : foreground);
                 }

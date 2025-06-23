@@ -4,7 +4,6 @@ import model.Client;
 import service.AccountService;
 import model.Account;
 import view.DashboardView;
-import view.AddBeneficiaryView;
 
 import javax.swing.*;
 
@@ -112,6 +111,7 @@ public class DashboardController {
        }
     }
     
+      
     private void switchToCheckingAccount() {
         try {
             AccountService accountService = new AccountService();
