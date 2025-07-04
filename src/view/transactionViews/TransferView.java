@@ -75,7 +75,17 @@ public class TransferView extends JFrame {
             @Override
             public Component getListCellRendererComponent(JList<?> list, Object value, int index,
                                                           boolean isSelected, boolean cellHasFocus) {
-                String fullText = (String) value;
+                
+            	if (value == null) {
+                    JLabel label = new JLabel("No beneficiaries available");
+                    label.setOpaque(true);
+                    label.setBackground(background);
+                    label.setForeground(foreground);
+                    label.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+                    return label;
+                }
+            	
+            	String fullText = (String) value;
                 String[] parts = fullText.split("\\|\\|");
                 String line1 = parts[0].trim();
                 String line2 = parts.length > 1 ? parts[1].trim() : "";

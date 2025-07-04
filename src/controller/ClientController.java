@@ -64,11 +64,15 @@ public class ClientController {
             String rib = BankIdentifierGenerator.generateRIB();
             accountService.saveAccount(accountNumber, rib, initialBalance, clientId);
 
-            registerView.showMessage("Registration successful!\nYour account number is: " + accountNumber,
-                    "Success", JOptionPane.INFORMATION_MESSAGE);
+            registerView.showMessage(
+            	    "Your registration has been completed successfully.\nYour new account number is: " + accountNumber,
+            	    "Registration Confirmation",
+            	    JOptionPane.INFORMATION_MESSAGE
+            	);
+
 
             registerView.dispose();
-            /*startLoginFlow();*/
+            startLoginFlow();
 
 	        } catch (DateTimeParseException e) {
 	            registerView.showMessage("Invalid birth date format. Use yyyy-mm-dd.", "Error", JOptionPane.ERROR_MESSAGE);
